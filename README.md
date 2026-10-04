@@ -1,43 +1,31 @@
+# GitHub RAG
 
-# 100% local RAG app to chat with GitHub!
+A local Retrieval-Augmented Generation (RAG) application that allows users to chat with GitHub repositories.
 
-This project leverages GitIngest to parse a GitHub repo in markdown format and the use LlamaIndex for RAG orchestration over it.
+The application uses GitIngest to extract repository content, LlamaIndex to build the RAG pipeline, HuggingFace embeddings for semantic search, and Ollama to generate responses locally.
 
+## Features
 
-## Installation and setup
+- Load a GitHub repository using its URL
+- Extract repository content automatically
+- Create a vector index for semantic retrieval
+- Ask questions about the repository
+- Generate answers using a local LLM
+- No OpenAI API key required for local usage
 
-**Install Dependencies**:
-   Ensure you have Python 3.9 or later installed (tested with Python 3.11.9).
-   
-   **Option 1: Using requirements.txt (Recommended)**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   
-   **Option 2: Manual installation**
-   ```bash
-   pip install gitingest llama-index llama-index-llms-ollama llama-index-llms-openai llama-index-agent-openai llama-index-embeddings-huggingface streamlit pandas python-dotenv huggingface-hub
-   ```
+## Tech Stack
 
-**Environment Setup**:
-   For OpenAI integration, create a `.env` file in the project directory:
-   ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
+- Python
+- Streamlit
+- GitIngest
+- LlamaIndex
+- HuggingFace Embeddings
+- Ollama
+- Qwen 2.5 Coder 7B
 
-**Running**:
+## Local Setup
 
-Make sure you have Ollama Server running then you can run following command to start the streamlit application ```streamlit run app_local.py```.
+### 1. Create a virtual environment
 
----
-
-## 📬 Stay Updated with Our Newsletter!
-**Get a FREE Data Science eBook** 📖 with 150+ essential lessons in Data Science when you subscribe to our newsletter! Stay in the loop with the latest tutorials, insights, and exclusive resources. [Subscribe now!](https://join.dailydoseofds.com)
-
-[![Daily Dose of Data Science Newsletter](https://github.com/patchy631/ai-engineering/blob/main/resources/join_ddods.png)](https://join.dailydoseofds.com)
-
----
-
-## Contribution
-
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
+```bash
+python -m venv .venv
